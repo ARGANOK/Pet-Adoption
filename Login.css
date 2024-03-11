@@ -1,0 +1,219 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+/* Snow flakes Effect */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/BackGround-4.jpg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  .snowflake {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: snowfall linear infinite;
+  }
+  
+  @keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+  }
+  /*end  */
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+@media screen and (max-width: 600px){
+    .box{
+        width: 20em;
+    }
+
+}
+.box{
+    height: max-content;
+    width: 40em;
+    /* max-width: 100%; */
+    /* min-width: 40%; */
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+
+    padding-left:  40px;
+    padding-right:  40px;
+    gap: 10px;
+    margin: 20px;
+
+    /* background-color: rgba(255,255,255,0.5); */
+}
+.inside-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* background-image: url('./'); */
+    background-size: cover;
+    background-position: center;
+}
+.UserName-input{
+    position: relative;
+    width: max-content;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    color: wheat;
+    /* margin: 10px; */
+    margin: 10px 0px;
+
+}
+.label-1{
+    display: flex;
+    padding: 0px 10px;
+    font-family:monospace   ;
+    font-weight: 600;
+}
+
+
+.Input-1{
+    /* width: 200px; */
+    background-color:transparent;
+    caret-color: red;
+    color: aliceblue;
+    border: none;
+    height: 100px;
+    font-family: monospace;
+    font-size: larger;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 5px 5px black;
+}
+#username{
+    width: 250px;
+}
+#password{
+    width: 72%;
+    padding-right: 40px;
+}
+.Input-1:focus{
+    outline: none;
+    border-color: white;
+    box-shadow:inset 0 0 5px black;
+}
+.Input-1::selection{
+    background-color: whitesmoke;
+    color: black;
+    /* padding:  10px; */
+}
+.changing{
+    position: absolute;
+    right: 18%;
+    /* font-size: large; */
+    display: flex;
+    /* align-items: center; */
+    top: 55%;
+    color: white;
+
+}
+@keyframes titleColor {
+    0% {
+        color: #3498db;
+        text-shadow: 4px 0px 10px white;
+    }
+    50% {
+        color: #e74c3c;
+        text-shadow: 4px 0px 10px black;
+    }
+    100% {
+        color: #34db4d;
+        text-shadow: 4px 0px 10px white;
+    }
+}
+@keyframes colorchangetitle{
+    0%{
+        color: white;
+        text-shadow: 4px 0px 10px burlywood;
+        
+    }
+    50%{
+        color: burlywood;
+        text-shadow: 4px 0px 10px beige;
+    }
+    100%{
+        color: white;
+        text-shadow: 4px 0px 10px burlywood;
+    }
+}
+#Box-Title{
+    color:burlywood;
+    font-family:"font" ;
+    animation: colorchangetitle 3s infinite;
+    text-shadow: 4px 0px 10px black;
+}
+@font-face{
+    font-family: "font";
+    src: url(./Fonts/Animal\ Insting.ttf);
+}
+@font-face{
+    font-family: "Font-1";
+    src: url(./Fonts/Cute\ Meow.otf);
+}
+#inside-Box-Title{
+    animation: titleColor 3s infinite alternate-reverse;
+    font-family:"Font-1";
+    font-size: 40px;
+    text-align: center;
+
+    width: 40%;
+    
+}
+
+.Login{
+    font-size: 20px;
+    background-color: white;
+    color: rgba(255, 54, 54, 0.801);
+    font-family: monospace;
+    font-weight: 700;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
