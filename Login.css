@@ -194,7 +194,7 @@ body{
     src: url(./Fonts/Cute\ Meow.otf);
 }
 #inside-Box-Title{
-    animation: titleColor 3s infinite alternate-reverse;
+    /* animation: titleColor 3s infinite alternate-reverse; */
     font-family:"Font-1";
     font-size: 40px;
     text-align: center;
@@ -204,16 +204,21 @@ body{
 }
 
 .Login{
-    font-size: 20px;
-    background-color: white;
+    font-size: 25px;
+    /* background-color: white; */
+    border: 2px solid white;
     color: rgba(255, 54, 54, 0.801);
     font-family: monospace;
-    font-weight: 700;
+    font-weight: bolder;
     width: 60%;
     display: flex;
     justify-content: center;
     padding: 10px;
     border-radius: 10px;
 
+}
+.Login:active{
+    transform: scale(1.2);
+    filter: grayscale(100%);
 }
 

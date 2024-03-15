@@ -15,31 +15,22 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(snowflake);
     }
   });
-document.getElementById('Login').document.addEventListener('clicked' , function(){
-    let usernameinfo = document.getElementById('username');
-    let passwordinfo = document.getElementById('password');
-    if(usernameinfo === "shashank" && passwordinfo === 'dreamer@@'){
-        window.location.href = "index.html";
-        displayerror.style.display = 'none';
-    }
-    else{
-        // alert("Invalid Username or Password");
-        displayerror.style.display = 'block';
-    }
-    
-})
+
 function gotopage(){
     let displayerror = document.getElementById('Error');
     let usernameinfo = document.getElementById('username').value;
     let passwordinfo = document.getElementById('password').value;
     if(usernameinfo === "shashank" && passwordinfo === 'dreamer@@'){
+        console.log('Clicked')
         window.location.href = "index.html";
         displayerror.style.display = 'none';
     }
-    else if(usernameinfo === " " || passwordinfo === " "){
+    else if(usernameinfo.trim() === '' || passwordinfo.trim() === '' || passwordinfo === "Enter the Password"){
+        console.log('Clicked')
         displayerror.style.display = 'none';
     }
     else{
+        console.log('Clicked')
         displayerror.style.display = 'block';
     }
 }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Finder</title>
     <link rel="stylesheet" href="Style.css">
+    <link rel="icon" style="height: 500px;" href="./Images/Screenshot_2024-02-14_140351-removebg-preview (1).png"  type="image/png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @keyframes typingAnimation {
@@ -26,18 +28,18 @@
 </head>
 <body>
     <div class="container">
-        <nav class="Navigation-bar">
+        <nav class="Navigation-bar" id="nav-bar">
             <div class="Navigation-bar-elements">
                 <a href="#" id="Logo">
                     <img src="./Images/Screenshot_2024-02-14_140351-removebg-preview (1).png" alt="" id="Logo-img">
                 </a>
-                <ul class="menu">
-                    <li class="menu-items" id="option-1" onclick="smoothscroll('Information-section')">Home</li>
-                    <li class="menu-items" id="option-2" onclick="smoothscroll('Information-section-1')">Pets</li>
-                    <a href="" style="text-decoration: none;"><li class="menu-items" id="option-3">Community</li></a>
-                    <a href="" style="text-decoration: none;"><li class="menu-items" id="option-4">Veternary</li></a>
-                    <a href="" style="text-decoration: none;"><li class="menu-items" id="option-5">Helpline</li></a>
-                    <a href="" style="text-decoration: none;"><li class="menu-items" id="option-6">About-us</li></a>
+                <ul class="menu" id="menu">
+                    <li class="menu-items" id="option-1" onclick="smoothscroll('Display-Box')">Home</li>
+                    <li class="menu-items" id="option-2" onclick="smoothscroll('Information-section')">Pets</li>
+                    <li class="menu-items" id="option-5" onclick="smoothscroll('Information-section-1')">Dogs and cats</li>
+                    <li class="menu-items" id="option-3" onclick="smoothscroll('Community')">Community</li>
+                    <li class="menu-items" id="option-4" onclick="smoothscroll('Veternary')">Veternary</li>
+                    <li class="menu-items" id="option-6" onclick="smoothscroll('Footer')">About-us</li>
                 </ul>
                 <ul class="menu-horizontal" id="menu-horizontal">
                     <li onclick="gotologin()">Login</li>
@@ -53,7 +55,7 @@
                 </ul>
                 <button class="Login-section">
                     <div class="Login" onclick="gotologin()">Login</div>
-                    <div class="Sign-up">Sign-up</div>
+                    <div class="Sign-up" onclick="gotologin()">Sign-up</div>
                 </button>
                 <div class="List-icon" onclick="showmenu()" id="List-icon">
                     <i class="fa-solid fa-list"></i>
@@ -64,8 +66,11 @@
         <section id="Display-Box">
             <div class="entry-showcase">
                 <div>
-                    <img src="./Images/cat.png" alt="" id="horse" >
-                    <img src="./Images/Siberian-Husky-removebg-preview.png" alt="" class="entrycase-image-gallery">
+                    <!-- <img src="./Images/Photo-2.jpg" alt=""> -->
+                    <img src="./Images/Dog.png" alt="" id="horse" >
+                    <!-- <img src="./Images/cat.png" alt="" id="horse-1" > -->
+                    <!-- <img src="./Images/photo2.jpg" alt="" class="entrycase-image-gallery"> -->
+                    <!-- <img src="./Images/Photo-3.jpg" alt="" class="entrycase-image-gallery-1"> -->
                 </div>
                 <div class="entry-showcase-text" id="Typed-Container" style="color: aquamarine;">
                     <span id="typedText"></span> 
@@ -77,18 +82,10 @@
         </section>
 
         <section class="Information-section" id="Information-section">
-            <div class="shape-section">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none" class="container-image-shape">
-                    <path class="elementor-shape-fill" d="M283.5,9.7c0,0-7.3,4.3-14,4.6c-6.8,0.3-12.6,0-20.9-1.5c-11.3-2-33.1-10.1-44.7-5.7	s-12.1,4.6-18,7.4c-6.6,3.2-20,9.6-36.6,9.3C131.6,23.5,99.5,7.2,86.3,8c-1.4,0.1-6.6,0.8-10.5,2c-3.8,1.2-9.4,3.8-17,4.7	c-3.2,0.4-8.3,1.1-14.2,0.9c-1.5-0.1-6.3-0.4-12-1.6c-5.7-1.2-11-3.1-15.8-3.7C6.5,9.2,0,10.8,0,10.8V0h283.5V9.7z M260.8,11.3	c-0.7-1-2-0.4-4.3-0.4c-2.3,0-6.1-1.2-5.8-1.1c0.3,0.1,3.1,1.5,6,1.9C259.7,12.2,261.4,12.3,260.8,11.3z M242.4,8.6	c0,0-2.4-0.2-5.6-0.9c-3.2-0.8-10.3-2.8-15.1-3.5c-8.2-1.1-15.8,0-15.1,0.1c0.8,0.1,9.6-0.6,17.6,1.1c3.3,0.7,9.3,2.2,12.4,2.7	C239.9,8.7,242.4,8.6,242.4,8.6z M185.2,8.5c1.7-0.7-13.3,4.7-18.5,6.1c-2.1,0.6-6.2,1.6-10,2c-3.9,0.4-8.9,0.4-8.8,0.5	c0,0.2,5.8,0.8,11.2,0c5.4-0.8,5.2-1.1,7.6-1.6C170.5,14.7,183.5,9.2,185.2,8.5z M199.1,6.9c0.2,0-0.8-0.4-4.8,1.1	c-4,1.5-6.7,3.5-6.9,3.7c-0.2,0.1,3.5-1.8,6.6-3C197,7.5,199,6.9,199.1,6.9z M283,6c-0.1,0.1-1.9,1.1-4.8,2.5s-6.9,2.8-6.7,2.7	c0.2,0,3.5-0.6,7.4-2.5C282.8,6.8,283.1,5.9,283,6z M31.3,11.6c0.1-0.2-1.9-0.2-4.5-1.2s-5.4-1.6-7.8-2C15,7.6,7.3,8.5,7.7,8.6	C8,8.7,15.9,8.3,20.2,9.3c2.2,0.5,2.4,0.5,5.7,1.6S31.2,11.9,31.3,11.6z M73,9.2c0.4-0.1,3.5-1.6,8.4-2.6c4.9-1.1,8.9-0.5,8.9-0.8	c0-0.3-1-0.9-6.2-0.3S72.6,9.3,73,9.2z M71.6,6.7C71.8,6.8,75,5.4,77.3,5c2.3-0.3,1.9-0.5,1.9-0.6c0-0.1-1.1-0.2-2.7,0.2	C74.8,5.1,71.4,6.6,71.6,6.7z M93.6,4.4c0.1,0.2,3.5,0.8,5.6,1.8c2.1,1,1.8,0.6,1.9,0.5c0.1-0.1-0.8-0.8-2.4-1.3	C97.1,4.8,93.5,4.2,93.6,4.4z M65.4,11.1c-0.1,0.3,0.3,0.5,1.9-0.2s2.6-1.3,2.2-1.2s-0.9,0.4-2.5,0.8C65.3,10.9,65.5,10.8,65.4,11.1	z M34.5,12.4c-0.2,0,2.1,0.8,3.3,0.9c1.2,0.1,2,0.1,2-0.2c0-0.3-0.1-0.5-1.6-0.4C36.6,12.8,34.7,12.4,34.5,12.4z M152.2,21.1	c-0.1,0.1-2.4-0.3-7.5-0.3c-5,0-13.6-2.4-17.2-3.5c-3.6-1.1,10,3.9,16.5,4.1C150.5,21.6,152.3,21,152.2,21.1z" fill="black"></path>
-                    <path class="elementor-shape-fill" d="M269.6,18c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C267.7,18.8,269.7,18,269.6,18z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M227.4,9.8c-0.2-0.1-4.5-1-9.5-1.2c-5-0.2-12.7,0.6-12.3,0.5c0.3-0.1,5.9-1.8,13.3-1.2	S227.6,9.9,227.4,9.8z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M204.5,13.4c-0.1-0.1,2-1,3.2-1.1c1.2-0.1,2,0,2,0.3c0,0.3-0.1,0.5-1.6,0.4	C206.4,12.9,204.6,13.5,204.5,13.4z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M201,10.6c0-0.1-4.4,1.2-6.3,2.2c-1.9,0.9-6.2,3.1-6.1,3.1c0.1,0.1,4.2-1.6,6.3-2.6	S201,10.7,201,10.6z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M154.5,26.7c-0.1-0.1-4.6,0.3-7.2,0c-7.3-0.7-17-3.2-16.6-2.9c0.4,0.3,13.7,3.1,17,3.3	C152.6,27.5,154.6,26.8,154.5,26.7z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M41.9,19.3c0,0,1.2-0.3,2.9-0.1c1.7,0.2,5.8,0.9,8.2,0.7c4.2-0.4,7.4-2.7,7-2.6	c-0.4,0-4.3,2.2-8.6,1.9c-1.8-0.1-5.1-0.5-6.7-0.4S41.9,19.3,41.9,19.3z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M75.5,12.6c0.2,0.1,2-0.8,4.3-1.1c2.3-0.2,2.1-0.3,2.1-0.5c0-0.1-1.8-0.4-3.4,0	C76.9,11.5,75.3,12.5,75.5,12.6z" fill="white"></path>
-                    <path class="elementor-shape-fill" d="M15.6,13.2c0-0.1,4.3,0,6.7,0.5c2.4,0.5,5,1.9,5,2c0,0.1-2.7-0.8-5.1-1.4	C19.9,13.7,15.7,13.3,15.6,13.2z" fill="white"></path>
-                </svg>
+        <div class="custom-shape-divider-bottom-1710489138">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
         </div>
                 <div id="Title">Rescued Animals gallery</div>
                 <div class="box-is">
@@ -240,11 +237,12 @@
                 </div>
             </section>
             <section class="Information-section-1" id="Information-section-1">
-                <div class="custom-shape-divider-top-1710131702">
+                <div class="custom-shape-divider-top-1710179874">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+                        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
                     </svg>
                 </div>
+                
                 
                 <div class="display-box">
                     <h1 class="Title">
@@ -253,6 +251,11 @@
                     </h1>
 
                     <div class="Template-1">
+                        <!-- <div class="Template-Dog-1 common-hover"> -->
+                            <!-- <div class="overlay"> -->
+                                <!-- <div>Hello</div> -->
+                            <!-- </div>  -->
+                        <!-- </div> -->
                         <img src="./Dogs/Dog-1.jpg" alt="" height="200px" width="270px" class="Template-Box-1 common-hover" >
                         <img src="./Dogs/Dog-2-Schnauzer.jpg" alt="" height="200px" class="Template-Box-3 common-hover">
                         <img src="./Dogs/Dog-2.jpg" alt="" height="200px" width="270px" class="Template-Box-2 common-hover">
@@ -269,25 +272,13 @@
                         <img src="./Dogs/dog-683339_1280.jpg" alt="" height="200px" width="270px" class="Template-Box-4 common-hover">
                     </div>
                 </div>
-                <div>
-                    <h1 class="Title-1">
-                        <!-- <img src="./Images/Banner-1.png" alt="" height="400px"  class="Title-Banner"> -->
-                        <div class="Title-Text-1">Rescued cats</div>
-                    </h1>
-                    <div class="Template-1">
-                        <img src="./Dogs/Dog-1.jpg" alt="" height="200px" width="270px" class="Template-Box-1 common-hover" >
-                        <img src="./Dogs/Dog-2-Schnauzer.jpg" alt="" height="200px" class="Template-Box-3 common-hover">
-                        <img src="./Dogs/Dog-2.jpg" alt="" height="200px" width="270px" class="Template-Box-2 common-hover">
-                        <img src="./Dogs/dog-683339_1280.jpg" alt="" height="200px" width="270px" class="Template-Box-4 common-hover">
-                    </div>
-                </div>
-                <div class="custom-shape-divider-bottom-1710149502">
+                <div class="custom-shape-divider-bottom-1710408093">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z" class="shape-fill"></path>
+                        <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
                     </svg>
                 </div>
             </section>
-            <section class="Veternary">
+            <section class="Community" id="Community">
                 <div class="custom-shape-divider-bottom-1710131380">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                         <rect x="1200" height="3.6"></rect>
@@ -295,9 +286,92 @@
                         <path d="M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z" class="shape-fill"></path>
                     </svg>
                 </div>
+
+                <div class="Main-Community-Box">
+                    <div class="Main-Community-Title">Pet Families</div>
+                    <div class="container-testimonials">
+                        <div >
+                            <div class="testimonial-Left-slider" id="Right-Slider">&lt</div>
+                        </div>
+                        <div class="Testimonials">
+                            <div class="box commmon-0" id="Box-1" >
+                                <img src="./Dogs/dog-683339_1280.jpg" class="Box-Family" alt="">
+                                <span class="common-text">Dogo on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-0" id="Box-2" >
+                                <img src="./Images/Family/road-trip-with-dog.avif" class="Box-Family" alt="">
+                                <span class="common-text">Dogo on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-1" id="Box-3" >
+                                <img src="./Images/bird.jpg" class="Box-Family" alt="">
+                                <span class="common-text">Dogo on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-1" id="Box-4" >
+                                <img src="./Images/Black-cat-Background.webp" class="Box-Family" alt="">
+                                <span class="common-text">Dogo on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-1" id="Box-5" >
+                                <img src="./Images/cat.png" class="Box-Family" alt="">
+                                <span class="common-text">Dogo on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-2" id="Box-6" >
+                                <img src="./Images/Horse.jpg" class="Box-Family" alt="">
+                                <span class="common-text">Dog on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-2" id="Box-7" >
+                                <img src="./Clips-for-Background/Clip2-Gif.gif" class="Box-Family" alt="">
+                                <span class="common-text">Dog on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-2" id="Box-8" >
+                                <img src=".//Clips-for-Background/Clip3-Gif.gif" class="Box-Family" alt="">
+                                <span class="common-text">Dog on the Trip with Family</span>
+                            </div>
+                            <div class="box commmon-3" id="Box-9" >
+                                <img src="./Clips-for-Background/Clip1-Gif.gif" class="Box-Family" alt="">
+                                <span class="common-text">Dog on the Trip with Family</span>
+                            </div>
+                            <!-- <div class="box commmon-3"  >hi9</div> -->
+                            <!-- <div class="box commmon-3"  >hi</div> -->
+                        </div>
+                        <div >
+                            <div class="testimonial-right-slider" id="Left-Slider">&gt;</div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="Veternary" id="Veternary">
+            <div class="Veternary-title">Veternary Contact</div>
+            <div class="Vet-1">
+                <div class="Vet-1-Box">               
+                    <img src="./Images/Veternary/Dr Steere pic.jpg" alt="" height="200px" width="450px" class="Veternary-1">
+                    <div class="Text-Box">
+                        <div class="Name-Title">Meet Dr. Kevin McAllister</div>
+                        <div class="content-1">Dr. Kevin McAllister, attended the University of Georgia for his undergraduate and veterinary degrees, with a concentration on small animal medicine and surgery.</div>
+                        <div class="content-2">He spent his life growing up around small animals when he worked at his father’s small animal practice, which led him to pursue veterinary medicine as a career.</div>
+                        <div class="content-1">Dr. Kevin McAllister excels in diagnosing intricate veterinary cases, earning a reputation for his remarkable ability to identify challenging conditions. Known as the veterinarian to turn to for complex health issues, he has a unique talent for uncovering accurate diagnoses where others may struggle.</div>
+                        <div>Email: info@petadoption.com</div>
+
+                        <div>Phone: +1 123-456-7890</div>
+                    </div>
+                </div>
+            </div>
+            <div class="Vet-1">
+                <div class="Vet-2-Box">               
+                    <img src="./Images/Veternary/Dr Steere pic.jpg" alt="" height="200px" width="450px" class="Veternary-1">
+                    <div class="Text-Box">
+                        <div class="Name-Title">Meet Dr. Kevin McAllister</div>
+                        <div class="content-1">Dr. Kevin McAllister, attended the University of Georgia for his undergraduate and veterinary degrees, with a concentration on small animal medicine and surgery.</div>
+                        <div class="content-2">He spent his life growing up around small animals when he worked at his father’s small animal practice, which led him to pursue veterinary medicine as a career.</div>
+                        <div class="content-1">Dr. Kevin McAllister excels in diagnosing intricate veterinary cases, earning a reputation for his remarkable ability to identify challenging conditions. Known as the veterinarian to turn to for complex health issues, he has a unique talent for uncovering accurate diagnoses where others may struggle.</div>
+                        <div>Email: info@petadoption.com</div>
+
+                        <div>Phone: +1 123-456-7890</div>
+                    </div>
+                </div>
+            </div>
         </section>
         <footer>
-            <div class="footer-content">
+            <div class="footer-content" id="Footer">
               <div class="footer-section about">
                 <h2>About Us</h2>
                 <p>Your pet adoption page description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -324,6 +398,7 @@
                   <li><a href="#" target="_blank">Instagram</a></li>
                 </ul>
               </div>
+              <br>
             </div>
             <div class="footer-bottom">
               <p>&copy; 2024 Pet Adoption. All rights reserved.</p>

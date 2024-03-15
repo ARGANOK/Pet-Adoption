@@ -1,4 +1,4 @@
-    document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded',function(){
     var body = document.body;
     body.style.transform = 'translateX(0px)'
 })
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             typedText.innerHTML += textToType.charAt(index);
             typedText.style.color = "white"
             typedText.style.fontSize = "30px"
-            typedText.style.padding = "10px"
+            // typedText.style.padding = "10px"
             index++;
         } else {
             setTimeout(function () {
@@ -89,22 +89,22 @@ initializeGrid(6);
 
 // For Changing Background
 
-document.addEventListener('DOMContentLoaded',function(){
-    const backgrounds=[
-        "./Clips-for-Background/Clip1-Gif.gif",
-        "./Clips-for-Background/Clip2-Gif.gif",
-        "./Clips-for-Background/Clip3-Gif.gif",
-        "./Clips-for-Background/Clip4-Gif.gif"
-    ]
-    let start = 0;
-    const backchange = document.querySelector('.entry-showcase')
-    function changebackground(){
-        backchange.style.backgroundImage = `url(${backgrounds[start]})`
-        start = (start + 1)%backgrounds.length;
-    }
-    changebackground()
-    setInterval(changebackground,5000);
-})
+// document.addEventListener('DOMContentLoaded',function(){
+//     const backgrounds=[
+//         "./Clips-for-Background/Clip1-Gif.gif",
+//         "./Clips-for-Background/Clip2-Gif.gif",
+//         "./Clips-for-Background/Clip3-Gif.gif",
+//         "./Clips-for-Background/Clip4-Gif.gif"
+//     ]
+//     let start = 0;
+//     const backchange = document.querySelector('.entry-showcase')
+//     function changebackground(){
+//         backchange.style.backgroundImage = `url(${backgrounds[start]})`
+//         start = (start + 1)%backgrounds.length;
+//     }
+//     changebackground()
+//     setInterval(changebackground,5000);
+// })
 
 function smoothscroll(sectionid){
     var section = document.getElementById(sectionid);
@@ -129,7 +129,47 @@ function showmenu(){
     }
 }
 function gotologin(){
-    window.location.href="Login.html";
+    window.open('Login.html' , '_blank');
 }
 
-    
+const testimonials = document.querySelector('.Testimonials');
+const box = testimonials.querySelectorAll('.box');
+const leftbutton = document.getElementById('Left-Slider');
+const rightbutton = document.getElementById('Right-Slider');
+const boxlength = box.length;
+let current = 0;
+
+function showcards(){
+    const start = current;
+    const end = Math.min(start + 3 , boxlength);
+    for(let i = 0; i < boxlength; i++){
+        const part = box[i];
+        const isVisible = i >= start && i < end;
+        part.classList.toggle('visible', isVisible);
+    }
+}
+showcards();
+rightbutton.addEventListener('click' , ()=>{
+    current = (current-1 + boxlength ) % boxlength;
+    // testimonials.classList.add('slide-left');
+    // setTimeout(()=>{
+    //     testimonials.classList.remove('slide-left');    
+    // },500);
+    showcards();
+})
+leftbutton.addEventListener('click' , ()=>{
+    current = (current + 1) % boxlength;
+    if(current === boxlength-3){
+        current = 0;
+    }
+    // testimonials.classList.add('slide-right');
+    // setTimeout(()=>{
+    //     testimonials.classList.remove('slide-right');
+    // },500);
+    showcards();
+
+
+
+})
+
+
